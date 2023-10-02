@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TicTacToe.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="60"/>
+                </Grid.ColumnDefinitions>
+                <Button
+                    Grid.Row="0" Grid.Column="0"
+                    x:Name="btnOne"
+                    Text=""
+                    FontSize="30"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    Clicked="OnSqrClicked"
+                />
+                <Button
+                    Grid.Row="0" Grid.Column="1"
+                    x:Name="btnTwo"
+                    Text=""
+                    FontSize="30"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    Clicked="OnSqrClicked"
+                />
+                <Button
+                    Grid.Row="0" Grid.Column="2"
+                    x:Name="btnThree"
+                    Text=""
+                    FontSize="30"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    Clicked="OnSqrClicked"
+                />
+                <Button
+                    Grid.Row="1" Grid.Column="0"
+                    x:Name="btnFour"
+                    Text=""
+                    FontSize="30"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    Clicked="OnSqrClicked"
+                />
+                <Button
+                    Grid.Row="1" Grid.Column="1"
+                    x:Name="btnFive"
+                    Text=""
+                    FontSize="30"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    Clicked="OnSqrClicked"
+                />
+                <Button
+                    Grid.Row="1" Grid.Column="2"
+                    x:Name="btnSix"
+                    Text=""
+                    FontSize="30"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    Clicked="OnSqrClicked"
+                />
+                <Button
+                    Grid.Row="2" Grid.Column="0"
+                    x:Name="btnSeven"
+                    Text=""
+                    FontSize="30"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    Clicked="OnSqrClicked"
+                />
+                <Button
+                    Grid.Row="2" Grid.Column="1"
+                    x:Name="btnEight"
+                    Text=""
+                    FontSize="30"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    Clicked="OnSqrClicked"
+                />
+                <Button
+                    Grid.Row="2" Grid.Column="2"
+                    x:Name="btnNine"
+                    Text=""
+                    FontSize="30"
+                    WidthRequest="55"
+                    HeightRequest="55"
+                    Clicked="OnSqrClicked"
+                />
+            </Grid>
+            <HorizontalStackLayout Spacing="30">
+                <Label
+                    Text="Winner is: "
+                    x:Name="LblWinner"
+                    />
+                <Label
+                    Text="Current player: X"
+                    x:Name="LblPlayer"
+                    />
+
+            </HorizontalStackLayout>
+            <Button
+                Text="Replay?"
+                x:Name="ReplayBtn"
+                Clicked="OnReplayClicked"
+                IsVisible="false"
+                />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
