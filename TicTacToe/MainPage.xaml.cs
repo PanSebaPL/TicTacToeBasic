@@ -9,8 +9,11 @@
         }
         public void Winner(string Sign)
         {
-            LblWinner.Text += Sign;
-            SemanticScreenReader.Announce(LblWinner.Text);
+            if (Sign != "DRAW!")
+                LblStatus.Text = Sign+" Won!";
+            else
+                LblStatus.Text = Sign;
+            SemanticScreenReader.Announce(LblStatus.Text);
             btnOne.IsEnabled = false;
             btnTwo.IsEnabled = false;
             btnThree.IsEnabled = false;
@@ -33,11 +36,11 @@
                 Winner(Squers[6]);
             else if (Squers[0] == Squers[4] && Squers[4] == Squers[8] && Squers[0] != "" && Squers[4] != "" && Squers[8] != "")
                 Winner(Squers[0]);
-            else if (Squers[2] == Squers[5] && Squers[5] == Squers[7] && Squers[2] != "" && Squers[5] != "" && Squers[7] != "")
+            else if (Squers[2] == Squers[4] && Squers[4] == Squers[6] && Squers[2] != "" && Squers[4] != "" && Squers[6] != "")
                 Winner(Squers[2]);
             else if (Squers[0] == Squers[3] && Squers[3] == Squers[6] && Squers[0] != "" && Squers[3] != "" && Squers[6] != "")
                 Winner(Squers[0]);
-            else if (Squers[1] == Squers[4] && Squers[4] == Squers[7] && Squers[4] != "" && Squers[4] != "" && Squers[7] != "")
+            else if (Squers[1] == Squers[4] && Squers[4] == Squers[7] && Squers[1] != "" && Squers[4] != "" && Squers[7] != "")
                 Winner(Squers[1]);
             else if (Squers[2] == Squers[5] && Squers[5] == Squers[8] && Squers[5] != "" && Squers[5] != "" && Squers[8] != "")
                 Winner(Squers[2]);
@@ -46,6 +49,7 @@
         }
         private void OnReplayClicked(object sender, EventArgs e)
         {
+            BackGroundScroll.BackgroundColor = Color.FromArgb("#99b1f7");
             btnOne.IsEnabled = true;
             btnTwo.IsEnabled = true;
             btnThree.IsEnabled = true;
@@ -66,28 +70,30 @@
             btnEight.Text = "";
             btnNine.Text = "";
             Turn = 0;
-            LblPlayer.Text = "Current player: x";
-            LblWinner.Text = "Winner is: ";
-            SemanticScreenReader.Announce(LblPlayer.Text);
-            SemanticScreenReader.Announce(LblPlayer.Text);
+            LblStatus.Text = "Current player: ✖";
+            SemanticScreenReader.Announce(LblStatus.Text);
         }
         private void OnSqrClicked(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             if (Turn % 2 == 0)
             {
-                btn.Text = "x";
-                LblPlayer.Text = "Current player: o";
+                btn.Text = "✖";
+                LblStatus.Text = "Current player: ⚫";
+                btn.FontSize = 60;
+                BackGroundScroll.BackgroundColor = Color.FromArgb("#5c85ff");
             }
             else
             {
-                btn.Text = "o";
-                LblPlayer.Text = "Current player: x";
+                btn.Text = "⚫";
+                LblStatus.Text = "Current player: ✖";
+                btn.FontSize = 60;
+                BackGroundScroll.BackgroundColor = Color.FromArgb("#698dfa");
             }
             btn.IsEnabled= false;
             Turn++;
             SemanticScreenReader.Announce(btn.Text);
-            SemanticScreenReader.Announce(LblPlayer.Text);
+            SemanticScreenReader.Announce(LblStatus.Text);
             Checker(sender);
         }
     }

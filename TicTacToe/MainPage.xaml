@@ -3,120 +3,153 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TicTacToe.MainPage">
 
-    <ScrollView>
+    <ScrollView x:Name="BackGroundScroll" BackgroundColor="#99b1f7">
         <VerticalStackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
-            <Grid>
+            <Grid HorizontalOptions="Center">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
                 </Grid.ColumnDefinitions>
                 <Button
                     Grid.Row="0" Grid.Column="0"
                     x:Name="btnOne"
                     Text=""
                     FontSize="30"
-                    WidthRequest="55"
-                    HeightRequest="55"
+                    WidthRequest="105"
+                    HeightRequest="105"
+                    CornerRadius="0"
+                    BorderWidth="5"
+                    BorderColor="Black"
                     Clicked="OnSqrClicked"
+                    BackgroundColor="White"
                 />
                 <Button
                     Grid.Row="0" Grid.Column="1"
                     x:Name="btnTwo"
                     Text=""
                     FontSize="30"
-                    WidthRequest="55"
-                    HeightRequest="55"
+                    WidthRequest="105"
+                    HeightRequest="105"
+                    CornerRadius="0"
+                    BorderWidth="5"
+                    BorderColor="Black"
                     Clicked="OnSqrClicked"
+                    BackgroundColor="White"
                 />
                 <Button
                     Grid.Row="0" Grid.Column="2"
                     x:Name="btnThree"
                     Text=""
                     FontSize="30"
-                    WidthRequest="55"
-                    HeightRequest="55"
+                    WidthRequest="105"
+                    HeightRequest="105"
+                    CornerRadius="0"
+                    BorderWidth="5"
+                    BorderColor="Black"
                     Clicked="OnSqrClicked"
+                    BackgroundColor="White"
                 />
                 <Button
                     Grid.Row="1" Grid.Column="0"
                     x:Name="btnFour"
                     Text=""
                     FontSize="30"
-                    WidthRequest="55"
-                    HeightRequest="55"
+                    WidthRequest="105"
+                    HeightRequest="105"
+                    CornerRadius="0"
+                    BorderWidth="5"
+                    BorderColor="Black"
                     Clicked="OnSqrClicked"
+                    BackgroundColor="White"
                 />
                 <Button
                     Grid.Row="1" Grid.Column="1"
                     x:Name="btnFive"
                     Text=""
                     FontSize="30"
-                    WidthRequest="55"
-                    HeightRequest="55"
+                    WidthRequest="105"
+                    HeightRequest="105"
+                    CornerRadius="0"
+                    BorderWidth="5"
+                    BorderColor="Black"
                     Clicked="OnSqrClicked"
+                    BackgroundColor="White"
                 />
                 <Button
                     Grid.Row="1" Grid.Column="2"
                     x:Name="btnSix"
                     Text=""
                     FontSize="30"
-                    WidthRequest="55"
-                    HeightRequest="55"
+                    WidthRequest="105"
+                    HeightRequest="105"
+                    CornerRadius="0"
+                    BorderWidth="5"
+                    BorderColor="Black"
                     Clicked="OnSqrClicked"
+                    BackgroundColor="White"
                 />
                 <Button
                     Grid.Row="2" Grid.Column="0"
                     x:Name="btnSeven"
                     Text=""
                     FontSize="30"
-                    WidthRequest="55"
-                    HeightRequest="55"
+                    WidthRequest="105"
+                    HeightRequest="105"
+                    CornerRadius="0"
+                    BorderWidth="5"
+                    BorderColor="Black"
                     Clicked="OnSqrClicked"
+                    BackgroundColor="White"
                 />
                 <Button
                     Grid.Row="2" Grid.Column="1"
                     x:Name="btnEight"
                     Text=""
                     FontSize="30"
-                    WidthRequest="55"
-                    HeightRequest="55"
+                    WidthRequest="105"
+                    HeightRequest="105"
+                    CornerRadius="0"
+                    BorderWidth="5"
+                    BorderColor="Black"
                     Clicked="OnSqrClicked"
+                    BackgroundColor="White"
                 />
                 <Button
                     Grid.Row="2" Grid.Column="2"
                     x:Name="btnNine"
                     Text=""
                     FontSize="30"
-                    WidthRequest="55"
-                    HeightRequest="55"
+                    WidthRequest="105"
+                    HeightRequest="105"
+                    CornerRadius="0"
+                    BorderWidth="5"
+                    BorderColor="Black"
                     Clicked="OnSqrClicked"
+                    BackgroundColor="White"
                 />
             </Grid>
-            <HorizontalStackLayout Spacing="30">
+            <HorizontalStackLayout Spacing="30" HorizontalOptions="Center">
                 <Label
-                    Text="Winner is: "
-                    x:Name="LblWinner"
+                    Text="Current player: ✖"
+                    x:Name="LblStatus"
+                    FontSize="70"
                     />
-                <Label
-                    Text="Current player: X"
-                    x:Name="LblPlayer"
-                    />
-
             </HorizontalStackLayout>
-            <Button
+            <Button HorizontalOptions="Center"
                 Text="Replay?"
                 x:Name="ReplayBtn"
                 Clicked="OnReplayClicked"
                 IsVisible="false"
+                WidthRequest="200"
                 />
         </VerticalStackLayout>
     </ScrollView>
